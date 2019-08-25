@@ -10,4 +10,4 @@ This revamp started 4 months ago
 # INTENT
 Same as the Micro-CMS, small footprint, easy to install, fast load, class based, extendable and modularized.
 
-Please use the <a href="/issues">Issue Tracker</a> for any issues that warrent attention
+Please use the <a href="https://github.com/Keldo/mcms2/issues">Issue Tracker</a> for any issues that warrent attention
