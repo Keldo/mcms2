@@ -12,10 +12,10 @@ Database
 Core
  - redirect_to
  - verifyEmail
- Pending
-  -- set_admin
-  -- log_timer
-  -- check_version
+ -- Pending
+  --- set_admin
+  --- log_timer
+  --- check_version
 
 Sentry
  - get_real_ip
