@@ -5,13 +5,20 @@
   - Version Check (Check for updates)
   - Settings
   -- Sitename
-  -- Descrition
+  -- Description
   -- Keywords
   -- Google Site Verification
   -- Bing Site Verification
   -- etc..
 
 2. Create Blogs Front End Class
+ - Slug URL's
+ 
 3. Create News Fron End Class
+ - Slug URL's
+ 
 4. Tie News into main module (if news is selected in settings)
-5. Create Bootstrapped Blog Theme
+
+5. Create installer
+
+6. Create Bootstrapped Blog Theme
