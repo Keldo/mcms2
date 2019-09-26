@@ -10,10 +10,10 @@ Please see the Issue Section and Submit any that you find.
  - entries of effected files
  - clear title and description of the bug or error
  ### Example
- Branch: Main
- Hash: 63F96a28307
- Title: Sentry is not working
- Description: Sentry is not functioning correctly because of this...
+ - Branch: Main
+ - Hash: 63F96a28307
+ - Title: Sentry is not working
+ - Description: Sentry is not functioning correctly because of this...
  
  ## Creating a Pull Request
  1. Fork It
@@ -30,4 +30,4 @@ All of your work <strong>WILL</strong> be documented.
 PHP will be written in proper format always.
 
 ## PDO
-We are tring to avoid it. MySQLi is sufficient.
+We are trying to avoid it. MySQLi is sufficient.
