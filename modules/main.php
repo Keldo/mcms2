@@ -5,12 +5,9 @@ if (basename($_SERVER['PHP_SELF']) == basename(__FILE__))
 }
 else
 {
-	if($sentry->get_real_ip() != '64.223.238.52')
-	{
-		// Update page counts
-		$query = "UPDATE site_views SET site_count=site_count+1";
-		$result = $db->query($query);
-	}
+  // Update page counts
+  $query = "UPDATE site_views SET site_count=site_count+1";
+  $result = $db->query($query);
 ?>
 
 
