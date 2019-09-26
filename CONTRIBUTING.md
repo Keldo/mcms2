@@ -6,7 +6,7 @@ Please see the <a href="https://github.com/Keldo/mcms2/issues">Issue Tracker</a>
 
 ## Mandatory things before creating a ticket
  - Branch
- - commite hash
+ - commit hash
  - entries of effected files
  - clear title and description of the bug or error
  ### Example
