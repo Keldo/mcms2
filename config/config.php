@@ -5,16 +5,15 @@
  * For html markeup
  * Header/Footer
 */
-define('SITENAME', 'DW Pool');
-define('BASEURL', 'https://www.dwpool.org');
-define('DESCRIPTION', 'Bitcoin Node and Mining Pool');
-define('KEYWORDS', 'crypro,currency,currencies,bitcoin,ethereum');
-define('LOGO', 'dw.jpg');
+define('SITENAME', '');
+define('BASEURL', '');
+define('DESCRIPTION', '');
+define('KEYWORDS', '');
+define('LOGO', 'logo.jpg');
 define('TIMEZONE', 'America/New_York');
 define('THEME', 'core');
-define('HEADER_IMG', 'dw_pool_header.jpg');
-define('GOOGLE_VERIFICATION', '6mDmmyHNzGH4anEZk_JUI-nnuL53iog2mOU9GD_Fmuw');
-define('OS_STATUS', 'Dev');
+define('HEADER_IMG', 'logo.jpg');
+define('GOOGLE_VERIFICATION', '');
 
 
 /*
@@ -45,7 +44,7 @@ define('TWITTER', '');
 
 /*
  * Sindication (RSS News Feed)
- * If you have the new module running
+ * If you have the news module running
  * it will turn your news into RSS for new readers
  * @ Boolean (1 = yes, 0 = no)
 */
