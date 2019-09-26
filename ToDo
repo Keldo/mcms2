@@ -1,0 +1,17 @@
+1. Create Management area and Controller Class
+  - Blogs
+  - News
+  - Modules
+  - Version Check (Check for updates)
+  - Settings
+  -- Sitename
+  -- Descrition
+  -- Keywords
+  -- Google Site Verification
+  -- Bing Site Verification
+  -- etc..
+
+2. Create Blogs Front End Class
+3. Create News Fron End Class
+4. Tie News into main module (if news is selected in settings)
+5. Create Bootstrapped Blog Theme
