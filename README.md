@@ -8,7 +8,7 @@ This is in Development and <strong>NOT</strong> production ready.
 Because the Micro-CMS is old and outdated, it's in need of a revamp, project is about 50% complete
 
 ### WHEN
-This revamp started 4 months ago
+This revamp started in march of 2019
 
 ### INTENT
 Same as the Micro-CMS, small footprint, easy to install, fast load, class based, extendable and modularized.
