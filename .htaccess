@@ -4,10 +4,13 @@ RewriteEngine On
 # RewriteBase /
 
 # https
+# if you are using https, uncomment the next two lines
+
 #RewriteCond %{HTTPS} off
 #RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
   
 # Logging PHP Errors
+# this will log to the logs directory in your web root
 php_flag log_errors on 
 php_value error_log logs/php_error.log
 
@@ -40,3 +43,4 @@ ErrorDocument 503 /error
 RewriteRule ^error /?p=error
 
 # Site Navigation
+# ^sometitle /?p=title
