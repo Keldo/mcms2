@@ -4,10 +4,14 @@
 	use database\db;
 	use microcms\core;
 	use sentry\security;
-
+        
+        // Instantiate the Database Class
 	$db = new db();
-	//$microcms = new settings();
+
+        // Instantiate the Core Class
 	$core = new core();
+
+        // Instantiate the Sentry Class
 	$sentry = new security();
 	
 	// Function operatives
@@ -37,9 +41,14 @@
 	}
 	
 	/*
-	* Prevention Session Injection
+	 * Prevention Session Injection
 	*/
 	if (isset($_REQUEST['_SESSION'])) die("Get lost Muppet!");
+
+        /*
+	 * Check to ensure that the config file exist, if not, exit
+	 * In the future, this file will be created during install
+	*/
 	if(file_exists('config/config.php'))
 	{
 		// We need the Visitors IP Address
@@ -52,20 +61,19 @@
 		$country = $sentry->ip_location($ip);
 		echo '<!-- Your current country location: '.$country.'-->';
 		
-		//session_start();
+		// Include the Current theme header
 		include 'themes/'.THEME.'/header.php';
 
 		// Error Checking
 		$core->check_errors(1);
 
-		// Session Time Out
-		//$core->log_timer(900);
-
 		// Set the Desired Time Zone
 		date_default_timezone_set(TIMEZONE);
 		
+		// Load the Content
 		include $content;
 		
+		// Include the current theme footer
 		include 'themes/'.THEME.'/footer.php';
 	}
 	else
