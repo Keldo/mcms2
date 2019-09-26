@@ -1,6 +1,9 @@
 # mcms2
 Rework with Classes
 
+# NOTICE
+This is in Development and <strong>NOTM/strong> production ready.
+
 # WHY
 Because the Micro-CMS is old and outdated, it's in need of a revamp, project is about 50% complete
 
