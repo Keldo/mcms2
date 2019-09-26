@@ -1,16 +1,16 @@
-# mcms2
+# microCMS
 Rework with Classes
 
-# NOTICE
+## NOTICE
 This is in Development and <strong>NOT</strong> production ready.
 
-# WHY
+### WHY
 Because the Micro-CMS is old and outdated, it's in need of a revamp, project is about 50% complete
 
-# WHEN
+### WHEN
 This revamp started 4 months ago
 
-# INTENT
+### INTENT
 Same as the Micro-CMS, small footprint, easy to install, fast load, class based, extendable and modularized.
 
 Please use the <a href="https://github.com/Keldo/mcms2/issues">Issue Tracker</a> for any issues that warrent attention
