@@ -2,7 +2,7 @@
 We are happy that you wish to Contribute, as it's not just about fixes, but also reporting bugs. Before reporting a bug please make sure to use the latest revision.
 
 ## Issues
-Please see the Issue Section and Submit any that you find.
+Please see the <a href="https://github.com/Keldo/mcms2/issues">Issue Tracker</a> and Submit any that you find.
 
 ## Mandatory things before creating a ticket
  - Branch
@@ -23,6 +23,8 @@ Please see the Issue Section and Submit any that you find.
  5. OPen a Pull Request
 
 # Developers
+Everything below is mandatory and this document can and will be updated regularly
+
 ## Documentation
 All of your work <strong>WILL</strong> be documented.
 
