@@ -17,6 +17,18 @@ class core
 		}
 	}
 	
+	public function is_ssl()
+	{
+		if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
+		    // SSL connection
+		    return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
 	public function redirect_to($new_location)
 	{
 		header("Location: " . $new_location);
