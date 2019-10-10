@@ -8,7 +8,6 @@
 <meta name="Revisit-After" content="1 days">
 <meta name="DESCRIPTION" content="<?php echo DESCRIPTION;?>">
 <meta name="KEYWORDS" content="<?php echo KEYWORDS;?>">
-<meta name="google-site-verification" content="<?php echo GOOGLE_VERIFICATION;?>" />
 <meta name="no-email-collection" content="http://www.unspam.com/noemailcollection/">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,24 +26,33 @@
 <meta property="og:type"          content="website" />
 <meta property="og:title"         content="<?php echo SITENAME; ?>" />
 <meta property="og:description"   content="<?php echo DESCRIPTION;?>" />
-<meta property="og:image"         content="<?php echo BASEURL;?>/themes/<?php echo THEME;?>/img/<?php echo LOGO;?>" />
+<meta property="og:image"         content="<?php echo BASEURL;?>/img/<?php echo LOGO;?>" />
 
 <!-- Twitter OpenGraph -->
 <meta name="twitter:card" content="summary" />
-<meta property="og:url" content="<?php echo BASEURL;?>/" />
-<meta property="og:title" content="<?php echo SITENAME;?>" />
-<meta property="og:description" content="<?php echo DESCRIPTION;?>" />
-<meta property="og:image" content="<?php echo BASEURL;?>/themes/<?php echo THEME;?>/img/<?php echo LOGO;?>" />
+<meta name="twitter:creator" content="<?php echo TWITTER;?>" />
+<meta property="twitter:url" content="<?php echo BASEURL;?>/" />
+<meta property="twitter:title" content="<?php echo SITENAME;?>" />
+<meta property="twitter:description" content="<?php echo DESCRIPTION;?>" />
+<meta property="twitter:image" content="<?php echo BASEURL;?>/img/<?php echo LOGO;?>" />
+
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5d9a4806dda9670012df658c&product=inline-share-buttons" async="async"></script>
 </head>
 
 <body>
 <main>
 <div id="wrapper">
-  <div id="header"></div>
+  <div id="header" style="background: url(/img/holidays/<?php echo $season->get_image(); ?>) no-repeat center top"></div>
+  <p align="center"><small><i><?php echo $season->do_text();?></i></small></p>
+  <p align="center">We are currently in Week <?php echo $season->get_week();?> in the year of our Lord, <?php echo date("Y");?></p>
   
   <!-- Navigation -->
     <ul class="nav">
 	  <li><a href="/">Home</a></li>
+	  <li><a href="/blogs">Blogs</a></li>
+	  <li><a href="/donate">Donate</a></li>
+	  <li><a href="/microcms">microCMS&trade;</a></li>
+	  <li><a href="/sentry">Sentry&trade;</a></li>
 	</ul>
 <!-- begin Content -->
 <div id="content">

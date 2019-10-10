@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 20191009 0150 UTC - Development
+
+### Added
+- Changed og: to twitter: for Twitter OpenGraph in Core theme header
+
 ## [2.0.0] - 20191005 0000 UTC - Development
 
 ### Added
