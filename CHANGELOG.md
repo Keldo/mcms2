@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 20191011 0200 UTC - Development
+
+### Added
+- Register
+- Login
+- Logout
+- SESSIONS for blogs
+
 ## [2.0.0] - 20191009 0150 UTC - Development
 
 ### Added
