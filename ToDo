@@ -11,16 +11,14 @@
   -- Bing Site Verification
   -- etc..
 
-2. Create Blogs Front End Class
+ 
+2. Create News Front End Class
  - Slug URL's
  
-3. Create News Front End Class
- - Slug URL's
- 
-4. Tie News into main module (if news is selected in settings)
+3. Tie News into main module (if news is selected in settings)
 
-5. Re Impement httbl functionality
+4. Re Impement httbl functionality
 
-6. Create installer
+5. Create installer
 
-7. Create Boot strapped Blog Theme
+6. Create Boot strapped Blog Theme
