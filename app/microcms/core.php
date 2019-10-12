@@ -17,6 +17,18 @@ class core
 		}
 	}
 	
+	public function logged_in()
+	{
+		if (isset($_SESSION['name']) && isset($_SESSION['user_id']))
+		{
+			return true;
+		} 
+		else
+		{
+			return false;
+		}
+	}
+	
 	public function is_ssl()
 	{
 		if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
@@ -105,5 +117,52 @@ class core
 		
 		// Return the message
 		return $this->msg;
+	}
+	
+	public function slugify($string)
+	{
+		$slug = strtolower(preg_replace('/[^a-zA-Z0-9\-]/', '',preg_replace('/\s+/', '-', $string) ));
+		return $slug;
+	}
+	
+	public function get_blogs()
+	{
+		$db = new db();
+		$query = "SELECT * FROM blogs ORDER BY blog_date DESC";
+		$result = $db->query($query);
+		return $result;
+	}
+	
+	public function get_blog($id)
+	{
+		$db = new db();
+		$query = "SELECT * FROM blogs WHERE id = '$id'";
+		$result = $db->query($query);
+		return $result;
+	}
+	
+	public function ago($time)
+	{
+	  $periods = array("second", "minute", "hour", "day", "week", "month", "year", "decade");
+	  $lengths = array("60","60","24","7","4.35","12","10");
+
+	  $now = time();
+
+       $difference     = $now - $time;
+       $tense         = "ago";
+
+	  for($j = 0; $difference >= $lengths[$j] && $j < count($lengths)-1; $j++)
+	  {
+        $difference /= $lengths[$j];
+	  }
+
+	  $difference = round($difference);
+
+	 if($difference != 1)
+	 {
+       $periods[$j].= "s";
+	 }
+
+	 return "$difference $periods[$j] $tense ";
 	}
 }
