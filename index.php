@@ -4,7 +4,6 @@
 	use microcms\core;
 	use microcms\blogs;
 	use microcms\settings;
-	use sentry\security;
 	$db = new db();
 	$core = new core();
 	$sentry = new security();
@@ -53,13 +52,6 @@
 	}
 	if(file_exists('config/config.php'))
 	{
-		// We need the Visitors IP Address
-		$ip = $sentry->get_real_ip();
-		// Is this IP address banned?
-		$sentry->check_ban($ip);
-		// Ban as needed from threat countries
-		$country = $sentry->ip_location($ip);
-		echo '<!-- Your current country location: '.$country.'-->';
 		$google_verification = $seo->google_verification;
 		$google_analytics_id = $seo->google_analytics_id;
 		$bing_verification = $seo->bing_verification;
