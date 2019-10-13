@@ -6,13 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 20191012 0250 UTC - Development
+
+### Added
+- Core Managemnt
+- SEO Management
+- Core Settings Management
+- microcms\settings Class
+
 ## [2.0.0] - 20191011 0200 UTC - Development
 
 ### Added
 - Register
 - Login
 - Logout
-- SESSIONS for blogs
 
 ## [2.0.0] - 20191009 0150 UTC - Development
 
