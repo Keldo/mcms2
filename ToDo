@@ -1,17 +1,9 @@
-1. Create Management area and Controller Class
+1. Create Management area and Controller Classes
   - Blogs
   - News
   - Modules
   - Version Check (Check for updates)
-  - Settings
-  -- Sitename
-  -- Description
-  -- Keywords
-  -- Google Site Verification
-  -- Bing Site Verification
-  -- etc..
-
- 
+  
 2. Create News Front End Class
  - Slug URL's
  
