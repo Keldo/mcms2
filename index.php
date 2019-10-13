@@ -1,7 +1,6 @@
 <?php
 	require_once('app/autoload.php');
 	use database\db;
-	use wheel\wheel;
 	use microcms\core;
 	use microcms\blogs;
 	use microcms\settings;
@@ -9,7 +8,6 @@
 	$db = new db();
 	$core = new core();
 	$sentry = new security();
-	$season = new wheel();
 	$seo = new settings();
 	$settings = new settings();
 	// Function operatives
@@ -31,20 +29,8 @@
 		case 'error':
 		$content = 'modules/error/main.php';
 		break;
-		case 'microcms':
-		$content = 'modules/microcms/main.php';
-		break;
-		case 'sentry':
-		$content = 'modules/sentry/main.php';
-		break;
 		case 'blogs':
 		$content = 'modules/blogs/main.php';
-		break;
-		case 'cart':
-		$content = 'modules/cart/main.php';
-		break;
-		case 'donate':
-		$content = 'modules/donate/main.php';
 		break;
 		case 'user':
 		$content = 'modules/user/main.php';
