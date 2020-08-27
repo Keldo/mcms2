@@ -1,91 +1,114 @@
 <?php
-	require_once('app/autoload.php');
-	use database\db;
-	use microcms\core;
-	use microcms\blogs;
-	use microcms\settings;
-	$db = new db();
-	$core = new core();
-	$sentry = new security();
-	$seo = new settings();
-	$settings = new settings();
-	// Function operatives
-	if (isset($_GET['p']))
+session_start();
+if(isset($_SESSION['admin']))
+{
+	$admin = $_SESSION['admin'];
+}
+
+include 'mc-core/loader.php';
+
+//Function operatives
+ if (isset($_GET['page']))
+ {
+	 $d = $_GET['page'];
+ } 
+elseif (isset($_POST['page']))
+{ // Forms
+	 $d = $_POST['page'];
+}
+ else
+ {
+	 $d = NULL;
+ }
+
+// Error Checking
+$core->check_errors(true);
+
+ // Include the theme's Header
+include 'mc-content/themes/'.$theme.'/header.php';
+
+/*
+ * Prevention Session Injection
+ */
+if (isset($_REQUEST['_SESSION']))
+{
+	die("Get lost Muppet!");
+}
+
+// Set the Desired Time Zone
+date_default_timezone_set($timezone);
+
+
+$query = "SELECT * FROM mc_plugins WHERE plugin_status = 1";
+$result = $db->query($query);
+$finished = false;
+while($row = $db->fetch_assoc($result))
+{
+    $plugin = $row['plugin_slug'];
+	
+    if ($d === $plugin)
 	{
-		$d = $_GET['p'];
-	} 
-	elseif (isset($_POST['p']))
-	{ // Forms
-		$d = $_POST['p'];
-	}
-	else
+        include 'mc-content/plugins/'.$plugin.'/'.$plugin.'.php';
+        $finished = true;
+        break;
+    }
+    /*
+	if ($d === 'manage')
 	{
-		$d = NULL;
+		include 'modules/manage/main.php';
+		$finished = true;
+		break;
 	}
-	// The Page Switch
-	switch($d)
+    */
+	if ($d === 'error')
 	{
-		case 'error':
-		$content = 'modules/error/main.php';
-		break;
-		case 'blogs':
-		$content = 'modules/blogs/main.php';
-		break;
-		case 'user':
-		$content = 'modules/user/main.php';
-		break;
-		case 'manage':
-		$content = 'modules/manage/main.php';
-		break;
-		case 'login':
-		$content = 'modules/manage/login.php';
-		break;
-		case 'logout':
-		$content = 'modules/manage/logout.php';
-		break;
-		case 'manage':
-		$content = 'modules/manage/main.php';
-		break;
-		default:
-		$content = 'modules/main.php';
+		include 'mc-includes/core_plugins/error/error.php';
+		$finished = true;
 		break;
 	}
-	if(file_exists('config/config.php'))
+	if ($d === 'login')
 	{
-		$google_verification = $seo->google_verification;
-		$google_analytics_id = $seo->google_analytics_id;
-		$bing_verification = $seo->bing_verification;
-		$facebook = $seo->facebook;
-		$twitter = $seo->twitter;
-		$instagram = $seo->instagram;
-		$youtube = $seo->youtube;
-		$site_name = $settings->site_name;
-		$base_url = $settings->base_url;
-		$site_logo = $settings->site_logo;
-		$description = $settings->description;
-		$keywords = $settings->keywords;
-		// Include the theme's Header
-		include 'themes/'.THEME.'/header.php';
-		// Error Checking
-		$core->check_errors(1);
-		// Session Time Out
-		//$core->log_timer(900);
-		// Set the Desired Time Zone
-		date_default_timezone_set(TIMEZONE);
-		/*
-		 * Prevention Session Injection
-		 */
-		if (isset($_REQUEST['_SESSION']))
-		{
-			die("Get lost Muppet!");
-		}
-		// Include content from each module
-		include $content;
-		// Include the themes Footer
-		include 'themes/'.THEME.'/footer.php';
+		include 'mc-includes/core_plugins/account/login.php';
+		$finished = true;
+		break;
 	}
-	else
+	if ($d === 'logout')
 	{
-		echo 'This site is not Installed or Configured Correctly';
+		include 'mc-includes/core_plugins/account/logout.php';
+		$finished = true;
+		break;
 	}
+	if ($d === 'signup')
+	{
+		include 'mc-includes/core_plugins/account/signup.php';
+		$finished = true;
+		break;
+	}
+	if ($d === 'blogs')
+	{
+		include 'mc-includes/core_plugins/blogs/main.php';
+		$finished = true;
+		break;
+	}
+	if ($d === 'account')
+	{
+		include 'mc-includes/core_plugins/account/user.php';
+		$finished = true;
+		break;
+	}
+}
+
+if (!$finished)
+{
+    include 'mc-content/themes/'.$theme.'/front_page.php';
+}
+
+
+// Do SSL and Sentry check
+include 'mc-includes/footer-check.php';
+
+
+// Include the themes Footer
+include 'mc-content/themes/'.$theme.'/footer.php';
+
 ?>
